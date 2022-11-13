@@ -1,0 +1,12 @@
+FROM node:alpine
+
+WORKDIR '/marketplace'
+COPY . .
+COPY package.json .
+
+RUN npm i
+
+ENV PORT 9299
+EXPOSE 9299
+
+CMD ["npm","run","start"]

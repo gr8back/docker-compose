@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  deployment:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    ports:
+      - '7777:80'
+    volumes:
+      - .:/myapp
+      - /myapp/node_modules
